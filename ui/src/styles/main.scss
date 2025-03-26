@@ -103,7 +103,7 @@ body {
     }
 
     &:disabled {
-      background: lighten($primary, 20%);
+      background: color.adjust($primary, 20%);
       cursor: not-allowed;
     }
   }
@@ -190,7 +190,7 @@ body {
     }
 
     tr:hover {
-      background: lighten($secondary, 2%);
+      background: color.adjust($secondary, 2%);
     }
 
     .delete-btn {
