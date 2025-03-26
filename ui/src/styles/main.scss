@@ -5,6 +5,7 @@ $error: #e74c3c;
 $success: #2ecc71;
 $text: #333;
 $border: #ddd;
+@use "sass:color";
 
 // Global styles
 body {
@@ -98,7 +99,7 @@ body {
     }
 
     &:hover {
-      background: darken($primary, 10%);
+      background: color.scale($primary, 10%);
     }
 
     &:disabled {
@@ -154,7 +155,7 @@ body {
     }
 
     &:hover {
-      background: darken($success, 10%);
+      background: color.scale($success, 10%);
     }
   }
 
