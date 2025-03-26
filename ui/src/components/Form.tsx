@@ -36,7 +36,7 @@ const RegistrationForm: React.FC = () => {
 
   const handleSubmit = async (values: FormValues, { setSubmitting }: any) => {
     try {
-      await axios.post('http://localhost:5000/api/students', values);
+      await axios.post('https://cs-class.onrender.com/api/students', values);
       alert('Registration successful!');
     } catch (error: any) {
       if (error.response && error.response.status === 409) {

@@ -28,20 +28,20 @@ const AdminDashboard: React.FC = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      axios.get('http://localhost:5000/api/students')
+      axios.get('https://cs-class.onrender.com/api/students')
         .then((response) => setStudents(response.data))
         .catch((error) => console.error('Error fetching students:', error));
     }
   }, [isAuthenticated]);
 
   const handleDelete = (id: number) => {
-    axios.delete(`http://localhost:5000/api/students/${id}`)
+    axios.delete(`https://cs-class.onrender.com/api/students/${id}`)
       .then(() => setStudents(students.filter((student) => student.id !== id)))
       .catch((error) => console.error('Error deleting student:', error));
   };
 
   const handleDownload = () => {
-    axios.get('http://localhost:5000/api/students/export', { responseType: 'blob' })
+    axios.get('https://cs-class.onrender.com/api/students/export', { responseType: 'blob' })
       .then((response) => {
         const url = window.URL.createObjectURL(new Blob([response.data]));
         const link = document.createElement('a');
